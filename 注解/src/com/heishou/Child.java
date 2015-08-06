@@ -1,9 +1,10 @@
 package com.heishou;
 
-public class Child implements Person {
+//@MyAnnotation(desc = "布吉岛", author = "还是布吉岛", age = 500)
+public class Child extends Person {
 
 	@Override
-	@MyAnnotation(desc = "布吉岛", author = "还是布吉岛", age = 500)
+	@MyAnnotation(desc = "依然布吉岛", author = "就是布吉岛", age = 500)
 	public String name() {
 		// TODO Auto-generated method stub
 		return null;
