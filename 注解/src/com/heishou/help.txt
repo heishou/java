@@ -1,0 +1,2 @@
+生成文档时乱码添加
+-encoding UTF-8 -charset UTF-8
