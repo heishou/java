@@ -97,7 +97,25 @@ public class Test {
 			System.out.println(color2.ordinal());
 		}
 		System.out.println("枚举的数量:"+Color.values().length);
-		
+		//枚举默认实现了java.lang.Comparable接口
+        System.out.println(color.red.compareTo(color.blue));
+        
+        //--------------------------
+        System.out.println("===========");
+        System.err.println("季节为" + Season.getSeason());
+        
+        
+        //--------------
+        System.out.println("===========");
+        for(Gender gender : Gender.values()){
+            System.out.println(gender.value);
+        }
+       
+        //--------------
+        System.out.println("===========");
+        for(OrderState order : OrderState.values()){
+            System.out.println(order.getName());
+        }
 	}
 
 }
