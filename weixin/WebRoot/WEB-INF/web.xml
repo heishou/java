@@ -15,7 +15,7 @@
 
   <servlet-mapping>
     <servlet-name>WeixinServlet</servlet-name>
-    <url-pattern>/servlet/WeixinServlet</url-pattern>
+    <url-pattern>/weixin.do</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
