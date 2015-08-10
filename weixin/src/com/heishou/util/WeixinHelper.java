@@ -4,6 +4,8 @@ import java.lang.reflect.Array;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -61,8 +63,13 @@ public class WeixinHelper {
 		return des;
 	}
     
-	
+	/**
+	 * 把xml消息请求转换为hashmap
+	 * @param request
+	 * @return
+	 */
 	public static String xmltomap(HttpServletRequest request) {
+		Map<String, String> map=new HashMap<String, String>();
 		
 		
 		return "";
