@@ -1,13 +1,23 @@
 package com.heishou.util;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+import com.thoughtworks.xstream.XStream;
 
 public class WeixinHelper {
 	private static final String token = "heishou";
@@ -64,16 +74,41 @@ public class WeixinHelper {
 	}
     
 	/**
-	 * 把xml消息请求转换为hashmap
+	 * 把xml消息请求转换为map
 	 * @param request
 	 * @return
+	 * @throws IOException 
 	 */
-	public static String xmltomap(HttpServletRequest request) {
-		Map<String, String> map=new HashMap<String, String>();
-		
-		
-		return "";
+	public static Map<String, String> xmlToMap(HttpServletRequest request) throws IOException {
+		Map<String, String> hMap=new HashMap<String,String>();
+		SAXReader sReader=new SAXReader();
+		//获取输入流
+		InputStream iStream=request.getInputStream();
+		try {
+			Document document=sReader.read(iStream);
+			//获取xml的根节点
+			Element element=document.getRootElement();
+			//所有子节点
+			List<Element> ee=element.elements();
+			for (Element element2 : ee) {
+				hMap.put(element2.getName(),element2.getText());
+			}
+		} catch (DocumentException e) {
+			e.printStackTrace();
+		}finally{
+			iStream.close();
+		}
+		return hMap;
 	}
 	
 	
+	/**
+	 * 文本消息对象转换成w文本消息xml
+	 * @param xm
+	 * @return
+	 */
+//	public static String messageToXML(TextMsg xm){
+//		XStream xStream=new XStream();
+//		xStream.toXML(xm);
+//	}
 }
