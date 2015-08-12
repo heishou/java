@@ -1,34 +1,36 @@
-package com.heishou.util;
+package com.heishou.model;
+
 /**
- * 微信文本消息对象
+ * 微信端图片消息对象
+ * 
  * @author heishou
- *
+ * 
  */
-public class TextMsg {
+public class ImageMsg {
 	/**
 	 * 开发者微信号
 	 */
-    private String ToUserName;
-    /**
-	 * 发送者
+	private String ToUserName;
+	/**
+	 * 发送方微信号
 	 */
-    private String FromUserName;
-    /**
-	 * 时间
+	private String FromUserName;
+	/**
+	 * 发送时间
 	 */
-    private String CreateTime;
-    /**
+	private String CreateTime;
+	/**
 	 * 消息类型
 	 */
-    private String MsgType;
-    /**
+	private String MsgType;
+	/**
 	 * 消息内容
 	 */
-    private String Content;
-    /**
+	private String Content;
+	/**
 	 * 消息id
 	 */
-    private String MsgId;
+	private String MsgId;
 	public String getToUserName() {
 		return ToUserName;
 	}
@@ -65,5 +67,4 @@ public class TextMsg {
 	public void setMsgId(String msgId) {
 		MsgId = msgId;
 	}
-    
 }
