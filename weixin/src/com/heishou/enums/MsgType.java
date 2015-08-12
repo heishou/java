@@ -1,4 +1,4 @@
-package com.heishou.util;
+package com.heishou.enums;
 
 /**
  * 微信端消息类型,避免手写错误和方便后期维护
@@ -39,6 +39,10 @@ public enum MsgType {
 		this.value=value;
 	}
     private String value;
+
+    /**
+     * 重写toString()返回枚举值为字符串
+     */
     @Override
     public String toString() {
     	return value;

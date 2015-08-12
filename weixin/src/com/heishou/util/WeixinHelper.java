@@ -17,6 +17,8 @@ import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
+import com.heishou.message.ImageMsg;
+import com.heishou.message.TextMsg;
 import com.thoughtworks.xstream.XStream;
 
 public class WeixinHelper {
